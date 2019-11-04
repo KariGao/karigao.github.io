@@ -1,0 +1,59 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<script src="d3plus.v2.js"></script>
+
+<body>
+
+</body>
+
+<script>
+        var data = [
+          {TeenageBirthRate: 0.2334,  ParentIncomeLevel:"High"},
+          {TeenageBirthRate: 0.2883,  ParentIncomeLevel:"Middle"},
+          {TeenageBirthRate: 0.3621,  ParentIncomeLevel:"Low"},
+        ];
+        
+        let BarPlot1 = new d3plus.BarChart()
+        .config({
+            data: data,
+            groupBy: "ParentIncomeLevel",
+            x: "ParentIncomeLevel",
+            xConfig: {
+              title: "Parent Income Level",
+              barConfig: {"stroke": "#595959","stroke-width":2},
+              titleConfig: {fontColor: "#595959"},
+            },
+            y: "TeenageBirthRate",
+            yConfig: {
+                title: "Percentage of Tennage Birth",
+                barConfig: {"stroke": "#595959","stroke-width":2},
+                gridConfig: {"opacity": 0.4},
+              tickFormat: function(d) {
+                return d*100 + "%";},
+              titleConfig: {fontColor: "#595959"},
+            },
+            tooltipConfig: {
+              title: function(d) {
+                return "Parent Income Level: " + d["ParentIncomeLevel"];
+              },
+              tbody: [
+                ["Percentage", function(d) { return d["TeenageBirthRate"]*100 + "%" }]
+              ]
+            },
+            legend: true,
+            shapeConfig: {
+                fill: function(d) {
+                  if (d.ParentIncomeLevel == "Low") return "#D95B5B";
+                  if (d.ParentIncomeLevel == "Middle") return "#F2A7A7";
+                  if (d.ParentIncomeLevel == "High") return "#F2B988";
+                  return "grey";},
+              }
+        
+          
+        })
+
+        
+          .groupPadding(250)
+          .render();
+</script>
