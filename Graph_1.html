@@ -30,12 +30,13 @@ new d3plus.Pack()
                 ["Individual Income:", function(d) { return "$"+d["value"]}]
               ]
             },
-            legend: false,
+            legend: true,
 
             shapeConfig: {
                 fill: function(d) {
-                  if (d.id == "Male") return "#547080";
-                  if (d.id == "Female") return "#A66874";
+                  if (d.parent == "High Parental Income") return "#A55865";
+                  if (d.parent == "Middle Parental Income") return "#765978";
+                  if (d.parent == "Low Parental Income") return "#3B5A6F";
                   return "grey";}
               }
         })
