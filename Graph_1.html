@@ -1,0 +1,50 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<script src="d3plus.v2.js"></script>
+
+<body>
+
+</body>
+
+<script>
+
+var data = [
+  {parent: "High Parental Income", id: "Male", value: 36131},
+  {parent: "High Parental Income", id: "Female", value: 25462},
+  {parent: "Middle Parental Income", id: "Male", value: 27474},
+  {parent: "Middle Parental Income", id: "Female", value: 19984},
+  {parent: "Low Parental Income", id: "Male", value: 18178},
+  {parent: "Low Parental Income", id: "Female", value: 15528}
+];
+  
+new d3plus.Pack()
+  .data(data)
+  .groupBy(["parent", "id"])
+  .config({
+            data: data,
+            tooltipConfig: {
+              title: function(d) {
+                return d["parent"];},
+              tbody: [
+                ["Individual Income:", function(d) { return "$"+d["value"]}]
+              ]
+            },
+            legend: true,
+
+            shapeConfig: {
+                fill: function(d) {
+                  if (d.parent == "High Parental Income") return "#A55865";
+                  if (d.parent == "Middle Parental Income") return "#765978";
+                  if (d.parent == "Low Parental Income") return "#3B5A6F";
+                  return "grey";}
+              }
+        })
+  .sum("value")
+  .render()
+
+</script>
+
+
+
+

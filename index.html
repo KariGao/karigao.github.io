@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<title>UrbanInformatics_A3_Liu_Gao</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="A3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("Skid_Row_2.jpg");
+  min-height: 70%;
+}
+</style>
+
+<script src="d3plus.v2.js"></script>
+
+<body>
+
+<!-- Header with image -->
+<header class="bgimg A3-display-container A3-grayscale-min" id="home">
+  <div class="A3-display-middle A3-center">
+    <span class="A3-text-white" style="font-size:40px">Intergenerational Social Upward Mobility<br>
+in Skid Row, Los Angeles</span>
+  </div>
+</header>
+
+
+<!-- ABOUT SKID ROW -->
+<div class="A3-DarkGreen">
+<div class="A3-container" id="about">
+  <div class="A3-content" style="max-width:800px">
+    <h5 class="A3-center A3-padding-64"><span class="A3-tag">ABOUT SKID ROW</span></h5>
+    <p>
+            <a href="https://en.wikipedia.org/wiki/Skid_Row,_Los_Angeles">Skid Row</a> is a neighborhood located in Downtown Los Angeles, California. 
+            The neighborhood is widely known for its high poverty rate and the large population of homeless people. 
+            According to census data from 2012 to 2016, the median household income in Skid Row was around $10,000 (for Los Angeles overall it is $62,000), 
+            whereas the poverty rate was as high as 82% (18% for Los Angeles). 
+            This said, here we examine <u><i>influences of parent income and gender on one's income in this neighborhood</i></u>.
+            From this particular perspective, 
+            it is expected to understand <u><i>the opprotunity for residents in this neighborhood to achieve better economic performance</i></u>,
+            and the contributing factors to it.
+            Data are provided by <a href="https://www.opportunityatlas.org/">The Opportunity Atlas</a>.
+            This organiation collected data on 20 million Americans from childhood to their mid-30s, 
+            which help trace the root of their affluence and poverty today.
+    </p>
+    <br/>
+  </div>
+</div>
+</div>
+
+<!-- I. INDIVIDUAL INCOME, PARENT INCOME, AND GENDER -->
+<div class="A3-Light">
+<div class="A3-container" id="about">
+        <div class="A3-content" style="max-width:800px">
+          <h5 class="A3-center A3-padding-64">
+              <span class="A3-tag-2 A3-wide">I. INDIVIDUAL INCOME, PARENT INCOME, AND GENDER</span>
+            </h5>
+          <p>
+              <strong><u><i>There is a positive relationship between the parent income and the individual income, 
+                  and males generally have higher income than females.</i></u></strong>
+                  We first made comparison on individual income of those who were born in families 
+                  with high parental income (top 25%), middle parental income (25-75%), and low parental income (least 25%).
+                  It is found that children from richer families are also more likely to earn higher income after they grow up.
+                  Children from relatively poor families, however, have lower individual income, 
+                  and therefore it is more difficult to ahieve better economic performance.
+                  Meanwhile, in each parental income group, males generally earn more than females, indicating a gender-based income inequality.
+                  This should arouse our attention that <strong><u><i>the intergenerational upward mobility in this neighborhood is relatively poor</i></u></strong>, 
+                  meaning that children originated from poor families are still likely to remain poor as an adult.
+                  In addition, <strong><u><i>females from poor families are provided with even fewer opportunities</i></u></strong>. 
+                  <br />
+                  <br />
+                  The plot below  shows the relationship between the individual income (indicated by the area of the circle) and parental income and gender. 
+                  Across groups, higher parent income is found to lead to higher individual income. 
+                  Within each group, females have poorer economic performance than males.
+          </p>
+        </div>
+</div>
+<!-- first graph -->
+<div class="A3-container" id="about">
+        <div class="A3-content" style="max-width:1200px"></div>
+            <p>
+                <div class="A3-card A3-center A3-Opacity-max">
+                <iframe src="Graph_1.html" height="400" width="1000" style="border:none" scrolling="no"></iframe>
+                </div>
+             </p>
+        </div>
+</div>
+
+
+<!-- II. HOUSEHOLD INCOME, PARENT INCOME, AND GENDER -->
+<div class="A3-Light">
+<div class="A3-container" id="about">
+        <div class="A3-content" style="max-width:800px">
+          <h5 class="A3-center A3-padding-64">
+              <span class="A3-tag-2 A3-wide">II. HOUSEHOLD INCOME, PARENT INCOME, AND GENDER</span>
+            </h5>
+          <p>
+              <strong><u><i>Much like the individual income, one's household income is also positively related to the parent income, 
+                  and the gender-based inequality still exists.</i></u></strong> 
+                  Here we select household income as another indicator for economic performance, 
+                  and the finding is very similar to the results above.
+                  It can be seen from the line plot below that higher parental income still contributes to the children's higher household income today, 
+                  and male's income appear to be significantly higher than females'. 
+                  This reinforces our argument above, but drives us to ask a further question: What may have caused  this inequality in Skid Row?
+                  <br />
+          </p>
+        </div>
+      </div>
+<!-- second graph -->
+<div class="A3-container" id="about">
+        <div class="A3-content" style="max-width:1200px"></div>
+            <p>
+                <div class="A3-card A3-center A3-Opacity-max">
+                <iframe src="Graph_2.html" height="400" width="1000" style="border:none" scrolling="no"></iframe>
+                </div>
+            </p>
+</div>
+</div>
+
+
+
+<!-- III. TEENAGE BIRTH RATE AND PARENT INCOME -->
+<div class="A3-Light">
+<div class="A3-container" id="about">
+        <div class="A3-content" style="max-width:800px">
+          <h5 class="A3-center A3-padding-64">
+              <span class="A3-tag-2 A3-wide">III. TEENAGE BIRTH RATE AND PARENT INCOME</span>
+            </h5>
+          <p>
+                With an attempt to understand reasons for the income inequality between males and females, 
+                we examine data on teenage birth rate for women belonging in different parental-income groups in this neighborhood.
+                Here we found that <strong><u><i>women born in relatively poor families have higher teenage birth rate in general.</i></u></strong> 
+                Teenage birth might be a potential factor that undermines women's access to opportunities, 
+                especially economic ones. 
+                The teenage birth rates are respectively 23%, 28%, and 36% for women from high-income, middle-income, and low-income families in Skid Row, 
+                which indicates that not only a substantial portion of women in this neighborhood have suffered teenage birth, 
+                but the problem gets especially significant for those born in families with lower parent income. 
+                This therefore may help explain the women's poorer economic performance, 
+                and should be tackled with in future porverty alleviation efforts.
+                <br />
+          </p>
+        </div>
+      </div>
+<!-- third graph -->
+        <div class="A3-content" style="max-width:1200px"></div>
+            <p>
+                <div class="A3-card A3-center A3-Opacity-max">
+                <iframe src="Graph_3.html" height="400" width="1000" style="border:none" scrolling="no"></iframe>
+                </div>
+            </p>
+</div>
+</div>
+<div class="A3-DarkGreen">
+<div class="A3-container" id="about">
+        <div class="A3-content" style="max-width:800px">
+                <h5 class="A3-center A3-padding-64">
+                        <span class="A3-tag A3-wide">CONCLUSION</span>
+                      </h5>
+          <p>
+                This work briefly explores intergenerational upward mobility in Skid Row through looking at children 
+                born between 1978 and 1983 in this neighborhood. It is found that these children are more likely to have 
+                higher income (both individual and household) if they were born in richer families, 
+                and males generally have more opportunities to economic achievements than females. 
+                One possible reason for this lies in the problem of teenage birth, 
+                which may hinder females from access to education or pursuit of career. 
+                These findings should arouse our attention that people from poor families have low upward mobility 
+                and are hardly able to improve their living conditions, while women are especially vulnerable. 
+                Some efforts should be made to provide low-income families with access to education and employment, and 
+                reduce the teenage birth rate to ensure women with more opportunities.
+          </p>
+          <br />
+          <!-- notes -->
+          <p><strong>Author:</strong> Xinyu Liu, Kari Gao
+            <br />
+            <i>Urban Informatics I, Assignment 03, GSAPP, Columbia University</i>
+            </p>
+          <p><strong>Instructor:</strong>Anthony P.Vanky</p>
+          <p><strong>Data Source:</strong><a href="https://www.opportunityatlas.org/">The Opportunity Atlas</a>.</p>
+          <p><strong>Background Image Source:</strong>https://nypost.com/2019/06/02/inside-the-squalor-on-skid-row-as-typhoid-scare-grips-los-angeles/"</p>
+          
+
+        </div>
+      </div>
+      <br />
+</div>
+</div>
+</body>
+</html>

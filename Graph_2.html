@@ -1,0 +1,63 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<script src="d3plus.v2.js"></script>
+
+<body>
+
+</body>
+
+<script>
+    var data = [
+
+      {Type: "Male",  HouseholdIncome: 37877,  ParentIncomeLevel:"High"},
+      {Type: "Male",  HouseholdIncome: 28451,  ParentIncomeLevel:"Middle"},
+      {Type: "Male",  HouseholdIncome: 18797,  ParentIncomeLevel:"Low"},
+    
+      {Type: "Female",  HouseholdIncome: 15532,  ParentIncomeLevel:"High"},
+      {Type: "Female",  HouseholdIncome: 13677,  ParentIncomeLevel:"Middle"},
+      {Type: "Female",  HouseholdIncome: 11627,  ParentIncomeLevel:"Low"},
+    ];
+
+    let LinePlot1 = new d3plus.LinePlot()
+    .config({
+        data: data,
+        groupBy: "Type",
+        x: "ParentIncomeLevel",
+        xConfig: {
+          title: "Parent Income Level",
+          titleConfig: {fontColor: "#595959"},
+          barConfig: {"stroke": "#595959","stroke-width":2},
+        },
+        y: "HouseholdIncome",
+        yConfig: {
+          title: "Household Income",
+          titleConfig: {fontColor: "#595959"},
+          barConfig: {"stroke": "#595959","stroke-width":2},
+          gridConfig: {"opacity": 0.4},
+          tickFormat: function(d) {
+            return "$"+d;
+          },
+        },
+        tooltipConfig: {
+          title: function(d) {
+            return "Parent Income Level: " + d["ParentIncomeLevel"];
+          },
+          tbody: [
+            ["Household Income", function(d) { return "$"+d["HouseholdIncome"]}]
+          ]
+        },
+        legend: true,
+        shapeConfig: {
+          Line:{
+            strokeWidth: 3,
+            strokeDasharray: 5,
+            stroke: function(f) {
+              if (f.Type == "Male") return "#547080";
+              if (f.Type == "Female") return "#A66874";
+              return "white";},
+          }
+        }
+    })
+    .render();
+</script>
